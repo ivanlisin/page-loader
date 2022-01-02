@@ -8,10 +8,8 @@ import loadPage from '../src/page-loader.js';
 
 const { program } = pkg;
 
-(async () => {
-  const data = await fs.readFile('package.json', 'utf-8');
-  const { description, version } = await JSON.parse(data);
-
+fs.readFile('package.json', 'utf-8').then((data) => {
+  const { description, version } = JSON.parse(data);
   program
     .arguments('<url>')
     .description(description)
@@ -30,4 +28,4 @@ const { program } = pkg;
       process.exit(0);
     })
     .parse(process.argv);
-})();
+});

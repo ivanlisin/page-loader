@@ -1,27 +1,10 @@
 // @ts-check
 
-import http from 'http';
-import https from 'https';
 import path from 'path';
 import Listr from 'listr';
 import { promises as fs } from 'fs';
+import { fetch } from './lib.js';
 import { makeFileNameByUrl, makeDirNameByUrl, makeFilePathByUrl } from './name.js';
-
-const fetch = (url) => new Promise((resolve, reject) => {
-  const protocol = url.startsWith('https') ? https : http;
-  protocol.get(url, (res) => {
-    if (res.statusCode !== 200) {
-      const { statusCode, statusMessage } = res;
-      reject(new Error(`Status Code: ${statusCode} | ${statusMessage}`));
-    }
-    res.setEncoding('utf8');
-    const buffer = [];
-    res.on('data', (chunk) => buffer.push(chunk));
-    res.on('end', () => resolve(buffer.join()));
-  });
-});
-
-const save = (filepath, data) => fs.writeFile(filepath, data, 'utf-8');
 
 export const loadIndex = (href) => fetch(href).then((data) => data.toString());
 
@@ -41,7 +24,7 @@ export const downloadAssets = (url, outputDir, assets) => {
       return fetch(href)
         .then((data) => {
           const filepath = makeFilePathByUrl(outputDir, url, asset);
-          return save(filepath, data);
+          return fs.writeFile(filepath, data, 'utf-8');
         });
     },
   }));
@@ -53,5 +36,5 @@ export const downloadAssets = (url, outputDir, assets) => {
 
 export const saveIndex = (url, outputDir, html) => {
   const filepath = makeFilePathByUrl(outputDir, url);
-  return save(filepath, html);
+  return fs.writeFile(filepath, html, 'utf-8');
 };

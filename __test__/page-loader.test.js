@@ -83,7 +83,7 @@ test('successful page loading', async () => {
 
 test('wrong url', async () => {
   turnOnNock();
-  const errorMessage = 'connect ECONNREFUSED 127.0.0.1:80';
+  const errorMessage = 'Invalid URL: wrong-url';
   await expect(loadPage('wrong-url', tmpdir)).rejects.toThrow(errorMessage);
 });
 
@@ -95,14 +95,14 @@ test('not exist output dir', async () => {
 
 test(`400 response for ${url}`, async () => {
   turnOnNock({ index: 400, src: [200, 200, 200, 200] });
-  const errorMessage = 'Request failed with status code 400';
+  const errorMessage = 'Status Code: 400 | null';
   await expect(loadPage(url, tmpdir)).rejects.toThrow(errorMessage);
 });
 
 const link = (new URL(srcLinks[0], origin)).href;
 test(`500 response for ${link}`, async () => {
   turnOnNock({ index: 200, src: [500, 200, 200, 200] });
-  const errorMessage = 'Request failed with status code 500';
+  const errorMessage = 'Status Code: 500 | null';
   await expect(loadPage(url, tmpdir)).rejects.toThrow(errorMessage);
 });
 

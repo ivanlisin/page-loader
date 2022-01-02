@@ -9,7 +9,7 @@
     "page-loader": "bin/cli.js"
   },
   "scripts": {
-    "test": "DEBUG=page-loader npx -n --experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "type": "module",
   "jest": {

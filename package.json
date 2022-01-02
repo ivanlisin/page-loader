@@ -1,6 +1,5 @@
 {
-  "name": "@hexlet/code",
-  "description": "page loader",
+  "name": "page-loader",
   "version": "0.0.0",
   "main": "index.js",
   "engines": {
@@ -18,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivanlisin/backend-project-lvl3.git"
+    "url": "git+https://github.com/ivanlisin/page-loader.git"
   },
-  "author": "Ivan Lisin",
+  "author": "Ivan Lisin <ivanlisin.tech@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ivanlisin/backend-project-lvl3/issues"
+    "url": "https://github.com/ivanlisin/page-loader/issues"
   },
-  "homepage": "https://github.com/ivanlisin/backend-project-lvl3#readme",
+  "homepage": "https://github.com/ivanlisin/page-loader#readme",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "eslint": "^7.17.0",

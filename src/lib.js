@@ -7,7 +7,7 @@ export const fetch = (url) => new Promise((resolve, reject) => {
   protocol.get(url, (res) => {
     if (res.statusCode !== 200) {
       const { statusCode, statusMessage } = res;
-      reject(new Error(`Status Code: ${statusCode} | ${statusMessage}`));
+      reject(new Error(`Status Code: ${statusCode}. Status message: ${statusMessage}`));
     }
     res.setEncoding('utf-8');
     const buffer = [];

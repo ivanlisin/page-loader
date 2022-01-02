@@ -95,14 +95,14 @@ test('not exist output dir', async () => {
 
 test(`400 response for ${url}`, async () => {
   turnOnNock({ index: 400, src: [200, 200, 200, 200] });
-  const errorMessage = 'Status Code: 400 | null';
+  const errorMessage = 'Status Code: 400. Status message: null';
   await expect(loadPage(url, tmpdir)).rejects.toThrow(errorMessage);
 });
 
 const link = (new URL(srcLinks[0], origin)).href;
 test(`500 response for ${link}`, async () => {
   turnOnNock({ index: 200, src: [500, 200, 200, 200] });
-  const errorMessage = 'Status Code: 500 | null';
+  const errorMessage = 'Status Code: 500. Status message: null';
   await expect(loadPage(url, tmpdir)).rejects.toThrow(errorMessage);
 });
 

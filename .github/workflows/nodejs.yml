@@ -36,8 +36,8 @@ jobs:
         env:
           CI: true
       - name: Run linter
-        # Run Linter
         run: |
           make lint
       - name: Test
+        run: |
           make test

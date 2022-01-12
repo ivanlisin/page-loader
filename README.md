@@ -1,6 +1,6 @@
 # page-loader
 
-[![Node CI](https://github.com/ivanlisin/page-loader/actions/workflows/nodejs.yml/badge.svg)](https://github.com/ivanlisin/page-loader/actions/workflows/nodejs.yml)
+[![Node CI](https://github.com/ivanlisin/page-loader/actions/workflows/nodejs.yml/badge.svg?branch=main)](https://github.com/ivanlisin/page-loader/actions/workflows/nodejs.yml)
 
 ## example
 

@@ -2,7 +2,6 @@
   "name": "page-loader",
   "version": "0.0.0",
   "main": "page-loader.js",
-  "license": "MIT",
   "engines": {
     "node": ">=16"
   },
@@ -21,7 +20,7 @@
     "url": "git+https://github.com/ivanlisin/page-loader.git"
   },
   "author": "Ivan Lisin <ivanlisin.tech@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ivanlisin/page-loader/issues"
   },

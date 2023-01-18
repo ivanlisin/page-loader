@@ -4,7 +4,7 @@ import os from 'os';
 import path from 'path';
 import { promises as fs } from 'fs';
 import nock from 'nock';
-import loadPage from '../src/page-loader';
+import loadPage from '../src/index.js';
 
 const url = 'https://ru.hexlet.io/courses';
 const { origin, pathname } = new URL(url);

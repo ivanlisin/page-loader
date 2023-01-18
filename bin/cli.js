@@ -4,7 +4,7 @@
 
 import pkg from 'commander';
 import { promises as fs } from 'fs';
-import loadPage from '../src/page-loader.js';
+import loadPage from '../src/index.js';
 
 const { program } = pkg;
 
